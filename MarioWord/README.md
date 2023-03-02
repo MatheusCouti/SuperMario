@@ -2,7 +2,7 @@
 
 ## 🎮 The Game
 
-- [Visit the game online](https://matheuscouti.github.io/SuperMario)
+- [Visit the game online](https://matheuscouti.github.io/SuperMario/MarioWord/)
 
 
 ## :memo: Licença
