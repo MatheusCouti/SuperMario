@@ -46,6 +46,20 @@
     animation: clouds-animation 20s infinite linear;
 }
 
+.score {
+    color: rgba(10, 10, 10, 0.63);
+    position: absolute;
+    font-family: 'Inter', sans-serif;
+    font-size: 2em;
+    font-weight: normal;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.178);
+}
+
+h1{
+    margin-block-start: 0.3em;
+    margin-inline-start: 40%;
+}
+
 /* Animation pipe */
 
 @keyframes pipe-animation {

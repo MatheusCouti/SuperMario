@@ -1,6 +1,11 @@
 const mario = document.querySelector('.mario'); // accessing the class
 const pipe = document.querySelector('.pipe');
 
+const scoreDisplay = document.querySelector('.score');
+
+let score = 0;
+let canScore = true; // flag to check if the player can score a point
+
 const jump = () => {
     mario.classList.add('jump'); // add 'jump' to class
 
@@ -20,6 +25,7 @@ function speed() {
     const currentDuration = parseFloat(window.getComputedStyle(animation[i]).getPropertyValue('animation-duration'));
     const newDuration = Math.max(currentDuration - 0.5,0.5);
     animation[i].style.animationDuration = newDuration + 's';
+
   }
   setTimeout(speed, 10000);
 }
@@ -48,6 +54,14 @@ const loop = setInterval(() => {
         mario.style.marginLeft = '50px'
 
         clearInterval(loop);
+    }else if (pipePosition < 0 && canScore) {
+        // player successfully jumped over the pipe
+        score++;
+        scoreDisplay.textContent = `Score: ${score}`;
+        canScore = false;
+    } else if (pipePosition > 0 && !canScore) {
+        // player has passed the pipe, reset canScore flag
+        canScore = true;
     }
 }, 10); 
 
