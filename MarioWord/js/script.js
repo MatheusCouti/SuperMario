@@ -11,6 +11,22 @@ const jump = () => {
     },500); // remove 'jump' from class
 }
 
+
+/* Speeds up the game every 0.5s */
+const animation = document.getElementsByClassName('pipe');
+
+function speed() {
+  for (let i = 0; i < animation.length; i++) {
+    const currentDuration = parseFloat(window.getComputedStyle(animation[i]).getPropertyValue('animation-duration'));
+    const newDuration = Math.max(currentDuration - 0.5,0.5);
+    animation[i].style.animationDuration = newDuration + 's';
+  }
+  setTimeout(speed, 10000);
+}
+
+setTimeout(speed, 10000);
+
+
 // game over rules
 const loop = setInterval(() => {
 
@@ -34,5 +50,7 @@ const loop = setInterval(() => {
         clearInterval(loop);
     }
 }, 10); 
+
+
 
 document.addEventListener('keydown', jump)// jump when clicked

@@ -24,7 +24,7 @@
     position: absolute;
     bottom: 0;
     width: 180px;
-    animation: pipe-animation 2s infinite linear;
+    animation: pipe-animation 2.5s infinite linear;
 }
 
 /* settings mario */
